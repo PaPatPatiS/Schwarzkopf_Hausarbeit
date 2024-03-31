@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de" xml:lang="de">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Analyse | PM2.5 Zeitreihenanalyse von den deutschen Landeshauptstädten</title>
+  <meta name="description" content="4 Analyse | PM2.5 Zeitreihenanalyse von den deutschen Landeshauptstädten im Jahr 2023" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Analyse | PM2.5 Zeitreihenanalyse von den deutschen Landeshauptstädten" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="4 Analyse | PM2.5 Zeitreihenanalyse von den deutschen Landeshauptstädten im Jahr 2023" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Analyse | PM2.5 Zeitreihenanalyse von den deutschen Landeshauptstädten" />
+  
+  <meta name="twitter:description" content="4 Analyse | PM2.5 Zeitreihenanalyse von den deutschen Landeshauptstädten im Jahr 2023" />
+  
+
+<meta name="author" content="Patricia Schwarzkopf" />
+
+
+<meta name="date" content="2024-03-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="methodik.html"/>
+<link rel="next" href="ergebnisse.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Pm2,5</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> index</a></li>
+<li class="chapter" data-level="2" data-path="einleitung.html"><a href="einleitung.html"><i class="fa fa-check"></i><b>2</b> Einleitung</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="einleitung.html"><a href="einleitung.html#hypothese-und-forschungsfrage"><i class="fa fa-check"></i><b>2.1</b> Hypothese und Forschungsfrage</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="methodik.html"><a href="methodik.html"><i class="fa fa-check"></i><b>3</b> Methodik</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="methodik.html"><a href="methodik.html#datenbeschaffung"><i class="fa fa-check"></i><b>3.1</b> Datenbeschaffung</a></li>
+<li class="chapter" data-level="3.2" data-path="methodik.html"><a href="methodik.html#packages-und-working-directory"><i class="fa fa-check"></i><b>3.2</b> Packages und Working Directory</a></li>
+<li class="chapter" data-level="3.3" data-path="methodik.html"><a href="methodik.html#datenbereinigung"><i class="fa fa-check"></i><b>3.3</b> Datenbereinigung</a></li>
+<li class="chapter" data-level="3.4" data-path="methodik.html"><a href="methodik.html#datenüberprüfung-auf-vollständigkeit"><i class="fa fa-check"></i><b>3.4</b> Datenüberprüfung auf Vollständigkeit</a></li>
+<li class="chapter" data-level="3.5" data-path="methodik.html"><a href="methodik.html#ermittlung-der-häufigsten-messzeiten-und-auswahl-des-analysezeitraums"><i class="fa fa-check"></i><b>3.5</b> Ermittlung der häufigsten Messzeiten und Auswahl des Analysezeitraums</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analyse.html"><a href="analyse.html"><i class="fa fa-check"></i><b>4</b> Analyse</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analyse.html"><a href="analyse.html#vorbereitung-der-datenimputation"><i class="fa fa-check"></i><b>4.1</b> Vorbereitung der Datenimputation</a></li>
+<li class="chapter" data-level="4.2" data-path="analyse.html"><a href="analyse.html#datenimputation-und-analyse"><i class="fa fa-check"></i><b>4.2</b> Datenimputation und Analyse</a></li>
+<li class="chapter" data-level="4.3" data-path="analyse.html"><a href="analyse.html#imputationverfahren"><i class="fa fa-check"></i><b>4.3</b> Imputationverfahren</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ergebnisse.html"><a href="ergebnisse.html"><i class="fa fa-check"></i><b>5</b> Ergebnisse</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ergebnisse.html"><a href="ergebnisse.html#geografische-darstellung-der-daten"><i class="fa fa-check"></i><b>5.1</b> Geografische Darstellung der Daten</a></li>
+<li class="chapter" data-level="5.2" data-path="ergebnisse.html"><a href="ergebnisse.html#clusteranalyse-der-städte"><i class="fa fa-check"></i><b>5.2</b> Clusteranalyse der Städte</a></li>
+<li class="chapter" data-level="5.3" data-path="ergebnisse.html"><a href="ergebnisse.html#saisonale-analyse"><i class="fa fa-check"></i><b>5.3</b> Saisonale Analyse</a></li>
+<li class="chapter" data-level="5.4" data-path="ergebnisse.html"><a href="ergebnisse.html#schwellenwertüberschreitung"><i class="fa fa-check"></i><b>5.4</b> Schwellenwertüberschreitung</a></li>
+<li class="chapter" data-level="5.5" data-path="ergebnisse.html"><a href="ergebnisse.html#detailanalyse"><i class="fa fa-check"></i><b>5.5</b> Detailanalyse</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="diskussion-und-reflektion.html"><a href="diskussion-und-reflektion.html"><i class="fa fa-check"></i><b>6</b> Diskussion und Reflektion</a></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PM2.5 Zeitreihenanalyse von den deutschen Landeshauptstädten</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analyse" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Analyse<a href="analyse.html#analyse" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Die Qualität einer Zeitreihenanalyse hängt wesentlich von der Vollständigkeit und Konsistenz der Daten ab. Im vorliegenden Datensatz wurden Unregelmäßigkeiten und Lücken identifiziert, die eine Datenimputation erforderlich machen. Das Ziel ist es, die Zeitreihen so zu ergänzen, dass saisonale Muster analysiert werden können. Um die geeignetste Methode für die Imputation zu identifizieren, werden verschiedene Ansätze getestet und anhand ihrer Fähigkeit bewertet, bekannte Werte zu reproduzieren.</p>
+<div id="vorbereitung-der-datenimputation" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Vorbereitung der Datenimputation<a href="analyse.html#vorbereitung-der-datenimputation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Für die Analyse wird der Datensatz in Sommer- und Wintermonate unterteilt.Dadurch werden saisonale Unterschiede in der Luftqualität berücksichtigt und die PM<sub>2,5</sub>-Werte unter verschiedenen klimatischen Bedingungen untersucht. Es werden die Tage ermittelt, an denen keine Messdaten vorliegen, um anschließend eine geeignete Interpolationsmethode zu finden</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="analyse.html#cb52-1" tabindex="-1"></a><span class="co"># Filtern der Mitternachtsdaten für ausgewählte Zeiträume</span></span>
+<span id="cb52-2"><a href="analyse.html#cb52-2" tabindex="-1"></a>Data_midnight <span class="ot">&lt;-</span> all_cities_midnight <span class="sc">%&gt;%</span></span>
+<span id="cb52-3"><a href="analyse.html#cb52-3" tabindex="-1"></a>  <span class="fu">filter</span>((date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-05-01&quot;</span>) <span class="sc">&amp;</span> date <span class="sc">&lt;=</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-06-30&quot;</span>)) <span class="sc">|</span></span>
+<span id="cb52-4"><a href="analyse.html#cb52-4" tabindex="-1"></a>           (date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-11-01&quot;</span>) <span class="sc">&amp;</span> date <span class="sc">&lt;=</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>)))</span>
+<span id="cb52-5"><a href="analyse.html#cb52-5" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="analyse.html#cb52-6" tabindex="-1"></a><span class="co"># Erstellung eines vollständigen Datumsbereichs für diese Zeiträume</span></span>
+<span id="cb52-7"><a href="analyse.html#cb52-7" tabindex="-1"></a>midnight_beginn <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2023-05-01&quot;</span>), <span class="fu">as.Date</span>(<span class="st">&quot;2023-06-30&quot;</span>), <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span>
+<span id="cb52-8"><a href="analyse.html#cb52-8" tabindex="-1"></a>midnight_ende <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2023-11-01&quot;</span>), <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>), <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span>
+<span id="cb52-9"><a href="analyse.html#cb52-9" tabindex="-1"></a>midnight_zeitraum <span class="ot">&lt;-</span> <span class="fu">c</span>(midnight_beginn, midnight_ende)</span>
+<span id="cb52-10"><a href="analyse.html#cb52-10" tabindex="-1"></a></span>
+<span id="cb52-11"><a href="analyse.html#cb52-11" tabindex="-1"></a><span class="co"># Erzeugen eines Dataframes, der jeden Tag im Datumsbereich mit den Ortsnamen kombiniert</span></span>
+<span id="cb52-12"><a href="analyse.html#cb52-12" tabindex="-1"></a>midnight_datum_auffüllen <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">date =</span> midnight_zeitraum, <span class="at">location_name =</span> <span class="fu">unique</span>(Data_midnight<span class="sc">$</span>location_name))</span>
+<span id="cb52-13"><a href="analyse.html#cb52-13" tabindex="-1"></a></span>
+<span id="cb52-14"><a href="analyse.html#cb52-14" tabindex="-1"></a><span class="co"># Zusammenführen des neuen Dataframes mit den bestehenden Daten, um fehlende Werte zu identifizieren</span></span>
+<span id="cb52-15"><a href="analyse.html#cb52-15" tabindex="-1"></a>midnight_mit_lücken <span class="ot">&lt;-</span> midnight_datum_auffüllen <span class="sc">%&gt;%</span></span>
+<span id="cb52-16"><a href="analyse.html#cb52-16" tabindex="-1"></a>  <span class="fu">left_join</span>(Data_midnight, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;location_name&quot;</span>))</span>
+<span id="cb52-17"><a href="analyse.html#cb52-17" tabindex="-1"></a></span>
+<span id="cb52-18"><a href="analyse.html#cb52-18" tabindex="-1"></a><span class="co"># Identifizierung der Tage mit fehlenden Daten</span></span>
+<span id="cb52-19"><a href="analyse.html#cb52-19" tabindex="-1"></a>missing_days <span class="ot">&lt;-</span> midnight_mit_lücken <span class="sc">%&gt;%</span></span>
+<span id="cb52-20"><a href="analyse.html#cb52-20" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(value_midnight)) <span class="sc">%&gt;%</span></span>
+<span id="cb52-21"><a href="analyse.html#cb52-21" tabindex="-1"></a>  <span class="fu">select</span>(date, location_name)</span>
+<span id="cb52-22"><a href="analyse.html#cb52-22" tabindex="-1"></a></span>
+<span id="cb52-23"><a href="analyse.html#cb52-23" tabindex="-1"></a><span class="fu">print</span>(missing_days)</span></code></pre></div>
+<pre><code>##          date location_name
+## 1  2023-06-09        Berlin
+## 2  2023-11-08        Berlin
+## 3  2023-12-20        Berlin
+## 4  2023-06-11        Bremen
+## 5  2023-11-04        Bremen
+## 6  2023-12-17        Bremen
+## 7  2023-12-24        Bremen
+## 8  2023-12-25        Bremen
+## 9  2023-12-26        Bremen
+## 10 2023-12-27        Bremen
+## 11 2023-12-28        Bremen
+## 12 2023-06-11       Dresden
+## 13 2023-11-02       Dresden
+## 14 2023-05-13       Hamburg
+## 15 2023-05-10          Kiel
+## 16 2023-05-01         Mainz
+## 17 2023-05-17         Mainz
+## 18 2023-12-03         Mainz
+## 19 2023-12-04         Mainz
+## 20 2023-05-01   Saarbrücken
+## 21 2023-05-02   Saarbrücken
+## 22 2023-11-28   Saarbrücken
+## 23 2023-11-29   Saarbrücken</code></pre>
+<p>Die Verteilung der fehlenden Daten zeigt zeitliche Cluster, insbesondere im Dezember und zu Beginn des Monats Mai. Möglicherweise weisen diese auf saisonale Betriebspausen der Messstationen hin. Diese Erkenntnisse sind für die Imputationsstrategie entscheidend, da sie helfen, die Methode auf mögliche systematische Ausfallzeiten abzustimmen. Um die Integrität der Zeitreihenanalyse zu gewährleisten, muss eine Imputationsmethode gewählt werden, die sowohl saisonale Schwankungen als auch zufällige Lücken adäquat berücksichtigt.</p>
+</div>
+<div id="datenimputation-und-analyse" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Datenimputation und Analyse<a href="analyse.html#datenimputation-und-analyse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Zu Beginn des Imputationsprozesses werden zufällig ausgewählte Datenpunkte im Datensatz entfernt, um als Testdaten für die Validierung der Imputationsmethoden zu dienen. Dieser Ansatz ermöglicht eine objektive Bewertung der Imputationsmethoden, indem die Genauigkeit der Ergänzung von bekannten Datenlücken überprüft wird. Um die Nachvollziehbarkeit und Konsistenz des Imputationsprozesses zu gewährleisten, wird ein reproduzierbarer Seed mittels set.seed(123) gesetzt.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="analyse.html#cb54-1" tabindex="-1"></a><span class="co"># Eine Kopie der Spalte für die Interpolation erstellen</span></span>
+<span id="cb54-2"><a href="analyse.html#cb54-2" tabindex="-1"></a>value_midnight_copy <span class="ot">&lt;-</span> midnight_mit_lücken<span class="sc">$</span>value_midnight</span>
+<span id="cb54-3"><a href="analyse.html#cb54-3" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="analyse.html#cb54-4" tabindex="-1"></a><span class="co"># Einige bekannte Datenpunkte werden für die Validierung entfernen</span></span>
+<span id="cb54-5"><a href="analyse.html#cb54-5" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) </span>
+<span id="cb54-6"><a href="analyse.html#cb54-6" tabindex="-1"></a>validation_indices <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">which</span>(<span class="sc">!</span><span class="fu">is.na</span>(value_midnight_copy)), <span class="at">size =</span> <span class="dv">100</span>)</span>
+<span id="cb54-7"><a href="analyse.html#cb54-7" tabindex="-1"></a>validation_values <span class="ot">&lt;-</span> value_midnight_copy[validation_indices]</span>
+<span id="cb54-8"><a href="analyse.html#cb54-8" tabindex="-1"></a>value_midnight_copy[validation_indices] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
+</div>
+<div id="imputationverfahren" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Imputationverfahren<a href="analyse.html#imputationverfahren" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um die beste Methode zur Auffüllung von Daten zu bestimmen, werden mehrere Ansätze getestet. Dabei spielen die mittleren absoluten Fehler (MAE) und die Wurzel des mittleren quadratischen Fehlers (RMSE) eine zentrale Rolle, da sie als Indikatoren für die Genauigkeit der Imputationsmethoden im Vergleich zu den bekannten, validierten Werten dienen.</p>
+<p>Bei der linearen Interpolation werden Punkte mit einer geraden Linie verbunden, um fehlende Werte zu schätzen. Diese Methode eignet sich gut für Daten mit einer linearen Tendenz.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="analyse.html#cb55-1" tabindex="-1"></a><span class="co"># Interpolation durchführen</span></span>
+<span id="cb55-2"><a href="analyse.html#cb55-2" tabindex="-1"></a><span class="co"># Methode 1: Lineare Interpolation</span></span>
+<span id="cb55-3"><a href="analyse.html#cb55-3" tabindex="-1"></a>value_midnight_linear <span class="ot">&lt;-</span> <span class="fu">na_interpolation</span>(value_midnight_copy, <span class="at">option =</span> <span class="st">&quot;linear&quot;</span>)</span></code></pre></div>
+<p>Die Spline-Interpolation verwendet Polynomfunktionen, um Kurven zwischen den Datenpunkten zu bilden. Dies ist besonders nützlich für Datensätze, die nicht-lineare Muster aufweisen.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="analyse.html#cb56-1" tabindex="-1"></a><span class="co"># Methode 2: Spline Interpolation</span></span>
+<span id="cb56-2"><a href="analyse.html#cb56-2" tabindex="-1"></a>value_midnight_spline <span class="ot">&lt;-</span> <span class="fu">na_interpolation</span>(value_midnight_copy, <span class="at">option =</span> <span class="st">&quot;spline&quot;</span>)</span></code></pre></div>
+<p>Die Stochastische Interpolation (Kalman-Filter) basiert auf der Wahrscheinlichkeitstheorie, um die Unsicherheit in den Daten zu berücksichtigen und präzisere Schätzungen zu liefern.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="analyse.html#cb57-1" tabindex="-1"></a><span class="co"># Methode 3: Stochastic Interpolation (Kalman-Filter)</span></span>
+<span id="cb57-2"><a href="analyse.html#cb57-2" tabindex="-1"></a>value_midnight_stochastic <span class="ot">&lt;-</span> <span class="fu">na_kalman</span>(value_midnight_copy)</span></code></pre></div>
+<p>Nach der Durchführung der Imputationen werden die interpolierten Werte in den Datensatz integriert. Der Vergleich der Fehlermetriken hilft dabei, die effektivste Methode zu bestimmen:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="analyse.html#cb58-1" tabindex="-1"></a><span class="co"># Original `value_midnight` Spalte mit den interpolierten Werten erstetzen</span></span>
+<span id="cb58-2"><a href="analyse.html#cb58-2" tabindex="-1"></a>midnight_mit_lücken<span class="sc">$</span>value_midnight_linear <span class="ot">&lt;-</span> value_midnight_linear</span>
+<span id="cb58-3"><a href="analyse.html#cb58-3" tabindex="-1"></a>midnight_mit_lücken<span class="sc">$</span>value_midnight_spline <span class="ot">&lt;-</span> value_midnight_spline</span>
+<span id="cb58-4"><a href="analyse.html#cb58-4" tabindex="-1"></a>midnight_mit_lücken<span class="sc">$</span>value_midnight_stochastic <span class="ot">&lt;-</span> value_midnight_stochastic</span></code></pre></div>
+<p>Die berechneten Fehlermetriken geben Aufschluss über die Genauigkeit der linearen Interpolation. Ein niedriger MAE und RMSE weisen auf eine hohe Übereinstimmung der interpolierten Werte mit den tatsächlichen Werten hin, was die Eignung der Methode für den vorliegenden Datensatz bestätigt.</p>
+<p>In diesem Codeabschnitt werden die Fehlermetriken MAE (mittlerer absoluter Fehler) und RMSE (Wurzel des mittleren quadratischen Fehlers) für drei verschiedene Imputationsmethoden berechnet: lineare Interpolation, Spline-Interpolation und stochastische Interpolation. Eine geringe Abweichung von MAE und RMSE zeigt eine hohe Übereinstimmung der interpolierten Werte mit den tatsächlichen Werten an und gibt Aufschluss darüber, welche der Methoden für die weitere Interpolation geeignet ist.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="analyse.html#cb59-1" tabindex="-1"></a><span class="co"># Fehlermetriken berechnen</span></span>
+<span id="cb59-2"><a href="analyse.html#cb59-2" tabindex="-1"></a>mae_linear <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">abs</span>(value_midnight_linear[validation_indices] <span class="sc">-</span> validation_values), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb59-3"><a href="analyse.html#cb59-3" tabindex="-1"></a>rmse_linear <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((value_midnight_linear[validation_indices] <span class="sc">-</span> validation_values)<span class="sc">^</span><span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb59-4"><a href="analyse.html#cb59-4" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="analyse.html#cb59-5" tabindex="-1"></a>mae_spline <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">abs</span>(value_midnight_spline[validation_indices] <span class="sc">-</span> validation_values), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb59-6"><a href="analyse.html#cb59-6" tabindex="-1"></a>rmse_spline <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((value_midnight_spline[validation_indices] <span class="sc">-</span> validation_values)<span class="sc">^</span><span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb59-7"><a href="analyse.html#cb59-7" tabindex="-1"></a></span>
+<span id="cb59-8"><a href="analyse.html#cb59-8" tabindex="-1"></a>mae_stochastic <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">abs</span>(value_midnight_stochastic[validation_indices] <span class="sc">-</span> validation_values), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb59-9"><a href="analyse.html#cb59-9" tabindex="-1"></a>rmse_stochastic <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((value_midnight_stochastic[validation_indices] <span class="sc">-</span> validation_values)<span class="sc">^</span><span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb59-10"><a href="analyse.html#cb59-10" tabindex="-1"></a></span>
+<span id="cb59-11"><a href="analyse.html#cb59-11" tabindex="-1"></a><span class="co"># Ergebnisse ausgeben</span></span>
+<span id="cb59-12"><a href="analyse.html#cb59-12" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;MAE Linear: &quot;</span>, mae_linear, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb59-13"><a href="analyse.html#cb59-13" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;RMSE Linear: &quot;</span>, rmse_linear, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb59-14"><a href="analyse.html#cb59-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;MAE Spline: &quot;</span>, mae_spline, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb59-15"><a href="analyse.html#cb59-15" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;RMSE Spline: &quot;</span>, rmse_spline, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb59-16"><a href="analyse.html#cb59-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;MAE Stochastic: &quot;</span>, mae_stochastic, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb59-17"><a href="analyse.html#cb59-17" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;RMSE Stochastic: &quot;</span>, rmse_stochastic, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<p>Die Ergebnisse zeigen, dass die lineare Interpolation im Vergleich zu den anderen getesteten Methoden die tatsächlichen Daten am genauesten schätzt.</p>
+<p>Die Methode hat den niedrigsten MAE von 3.23625 und RMSE von 4.276355. Spline-Interpolation hingegen weist einen höheren MAE und RMSE auf (3.774218 bzw. 4.884266), was auf eine geringere Genauigkeit hinweist. Die stochastische Interpolation ergibt einen MAE von 3,626801 und einen RMSE von 4,543058. Obwohl sie besser ist als die Spline-Interpolation, ist sie immer noch schlechter als die lineare Interpolation. Basierend auf diesen Ergebnissen wird die lineare Interpolation als die geeignetste Methode für die Datenimputation in diesem Kontext verwendet, da sie die geringsten Fehlerwerte aufweist. Dies deutet darauf hin, dass die lineare Interpolation eine präzise Methode zur Schätzung fehlender Werte im Datensatz darstellt und somit eine solide Grundlage für weitere Analysen bietet.</p>
+<p>Im Folgenden wird eine lineare Interpolation auf der Spalte ‘value_midnight’ durchgeführt, um fehlende Datenpunkte zu ersetzen. Anschließend werden geografische Koordinaten sowie weitere relevante Informationen für jede Stadt ergänzt.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="analyse.html#cb60-1" tabindex="-1"></a><span class="co"># Lineare Interpolation auf der &#39;value_midnight&#39; Spalte durchführen</span></span>
+<span id="cb60-2"><a href="analyse.html#cb60-2" tabindex="-1"></a>midnight_mit_lücken<span class="sc">$</span>value_midnight <span class="ot">&lt;-</span> <span class="fu">na_interpolation</span>(midnight_mit_lücken<span class="sc">$</span>value_midnight, <span class="at">option =</span> <span class="st">&quot;linear&quot;</span>)</span>
+<span id="cb60-3"><a href="analyse.html#cb60-3" tabindex="-1"></a>midnight_interpoliert <span class="ot">&lt;-</span> midnight_mit_lücken</span>
+<span id="cb60-4"><a href="analyse.html#cb60-4" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="analyse.html#cb60-5" tabindex="-1"></a><span class="co"># Überprüfen des Ergebnisses</span></span>
+<span id="cb60-6"><a href="analyse.html#cb60-6" tabindex="-1"></a><span class="fu">summary</span>(midnight_interpoliert<span class="sc">$</span>value_midnight)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.500   4.700   8.000   9.042  12.000  98.000</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="analyse.html#cb62-1" tabindex="-1"></a><span class="co">#Anpassung der fehlenden Daten (Koordinaten, unit)</span></span>
+<span id="cb62-2"><a href="analyse.html#cb62-2" tabindex="-1"></a>coordinates <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb62-3"><a href="analyse.html#cb62-3" tabindex="-1"></a>  <span class="at">location_name =</span> <span class="fu">c</span>(<span class="st">&quot;Berlin&quot;</span>, <span class="st">&quot;Bremen&quot;</span>, <span class="st">&quot;Dresden&quot;</span>, <span class="st">&quot;Hamburg&quot;</span>, <span class="st">&quot;Kiel&quot;</span>, <span class="st">&quot;Mainz&quot;</span>, <span class="st">&quot;Saarbrücken&quot;</span>),</span>
+<span id="cb62-4"><a href="analyse.html#cb62-4" tabindex="-1"></a>  <span class="at">longitude =</span> <span class="fu">c</span>(<span class="fl">13.418833</span>, <span class="fl">8.69506</span>, <span class="fl">13.74139</span>, <span class="fl">10.02123</span>, <span class="fl">10.13516</span>, <span class="fl">8.273979</span>, <span class="fl">6.987601</span>), </span>
+<span id="cb62-5"><a href="analyse.html#cb62-5" tabindex="-1"></a>  <span class="at">latitude =</span> <span class="fu">c</span>(<span class="fl">52.51361</span>, <span class="fl">53.11770</span>, <span class="fl">51.06493</span>, <span class="fl">53.52326</span>, <span class="fl">54.30468</span>, <span class="fl">49.99502</span>, <span class="fl">49.23346</span>)</span>
+<span id="cb62-6"><a href="analyse.html#cb62-6" tabindex="-1"></a>)</span>
+<span id="cb62-7"><a href="analyse.html#cb62-7" tabindex="-1"></a></span>
+<span id="cb62-8"><a href="analyse.html#cb62-8" tabindex="-1"></a>midnight_interpoliert <span class="ot">&lt;-</span> midnight_interpoliert <span class="sc">%&gt;%</span></span>
+<span id="cb62-9"><a href="analyse.html#cb62-9" tabindex="-1"></a>  <span class="fu">left_join</span>(coordinates, <span class="at">by =</span> <span class="st">&quot;location_name&quot;</span>)</span>
+<span id="cb62-10"><a href="analyse.html#cb62-10" tabindex="-1"></a></span>
+<span id="cb62-11"><a href="analyse.html#cb62-11" tabindex="-1"></a>midnight_interpoliert <span class="ot">&lt;-</span> midnight_interpoliert <span class="sc">%&gt;%</span></span>
+<span id="cb62-12"><a href="analyse.html#cb62-12" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb62-13"><a href="analyse.html#cb62-13" tabindex="-1"></a>    <span class="at">longitude =</span> <span class="fu">coalesce</span>(longitude.x, longitude.y),</span>
+<span id="cb62-14"><a href="analyse.html#cb62-14" tabindex="-1"></a>    <span class="at">latitude =</span> <span class="fu">coalesce</span>(latitude.x, latitude.y)</span>
+<span id="cb62-15"><a href="analyse.html#cb62-15" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb62-16"><a href="analyse.html#cb62-16" tabindex="-1"></a>  <span class="fu">select</span>(date, location_name, value_midnight, unit, longitude, latitude)</span>
+<span id="cb62-17"><a href="analyse.html#cb62-17" tabindex="-1"></a>midnight_interpoliert<span class="sc">$</span>unit <span class="ot">&lt;-</span> <span class="st">&quot;µg/m³&quot;</span></span></code></pre></div>
+<p>Die lineare Interpolation wurde durchgeführt und die vollständigen Daten wurden im Dataframe ‘midnight_interpoliert’ gespeichert. Dieser enthält nun die PM<sub>2,5</sub>-Daten der 16 ausgewählten Städte mit ihren Koordinaten sowie Messungen aus den Monaten Mai, Juni, November und Dezember.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="methodik.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ergebnisse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/Analyse.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
